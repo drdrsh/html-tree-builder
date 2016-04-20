@@ -1,0 +1,28 @@
+{
+  "name": "html-tree-builder",
+  "authors": [
+    "drdrsh <mostafa.mohmmed@gmail.com>"
+  ],
+  "description": "For those who want to build clean RTL html markup without having to wrestle with editors",
+  "main": "index.html",
+  "keywords": [
+    "html",
+    "tree",
+    "markup"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gijgo": "^0.6.2",
+    "jstree": "^3.3.0",
+    "jquery": "^2.2.3",
+    "jquery-ui": "^1.11.4"
+  }
+}
