@@ -36,9 +36,6 @@ module.exports = function(grunt) {
                         dest: 'dist/images',
                         filter: 'isFile'
                     }, {
-                        src: 'dev/index.php',
-                        dest: 'dist/index.php'
-                    }, {
                         src: 'dev/favicon.ico',
                         dest: 'dist/favicon.ico'
                     }
@@ -50,7 +47,7 @@ module.exports = function(grunt) {
 			options: {
 				port: 9000,
 				serve: {
-					path: './dev/'
+					path: './dist/'
 				}
 			}
 		},
@@ -93,14 +90,16 @@ module.exports = function(grunt) {
             },
             dist: {
                 dest : 'dist/style/style.css',
-                src  : ['dev/assets/lib/vis/vis.css',
+                src  : [
                     'dev/assets/lib/jquery-ui/jquery-ui.css',
-                    'dev/assets/lib/simplebar/simplebar.css',
+                    'dev/assets/lib/jstree/jstree.css',
+                    'dev/assets/lib/gijgo/grid.css',
                     'dev/assets/app/css/style.css'
                 ],
             }
         },
 
+                    
         concat: {
             "dist" : {
                 options: {},
@@ -108,21 +107,13 @@ module.exports = function(grunt) {
                     'dist/js/scripts.js': [
                         "dev/assets/lib/jquery/jquery.js",
                         "dev/assets/lib/jquery-ui/jquery-ui.js",
-                        "dev/assets/lib/jquery-calendars/jquery.calendars.js",
-                        "dev/assets/lib/jquery-calendars/jquery.calendars.islamic.js",
-                        "dev/assets/lib/jquery-calendars/jquery.calendars.julian.js",
-                        "dev/assets/lib/vis/vis.js",
-                        "dev/assets/lib/simplebar/simplebar.js",
-                        "dev/assets/app/js/Language.js",
-                        "dev/assets/app/language/ar.js",
-                        "dev/assets/app/js/SearchManager.js",
-                        "dev/assets/app/js/LocalStorage.js",
-                        "dev/assets/app/js/main.js",
-                        "dev/assets/app/js/HelpEngine.js",
-                        "dev/assets/app/js/main-req.js",
-                        "dev/assets/app/js/Config.js",
-                        "dev/assets/app/js/template.js",
-                        "dev/assets/app/js/main-vis.js"
+                        "dev/assets/lib/jstree/jstree.js",
+                        "dev/assets/lib/gijgo/grid.js",
+                        "dev/assets/app/js/array.equals.js",
+                        "dev/assets/app/js/events.js",
+                        "dev/assets/app/js/startup.js",
+                        "dev/assets/app/js/main.js"
+    
                     ]
                 }
             },

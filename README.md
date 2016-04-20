@@ -12,3 +12,8 @@ grunt serve
 ```
 
 And navigate to [http://localhost:9000/index.html](http://localhost:9000/index.html)
+
+To generate distribution files run
+```shell
+grunt dist
+```
