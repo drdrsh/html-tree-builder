@@ -55,7 +55,9 @@ function generateHTML(nodeId, level) {
         
         html   = '\t'.repeat(level)   + '<' + node.text + attribArray.join('') + '>\n';
         if(innerText) {
-            html  += '\t'.repeat(level+1) + innerText + '\n';
+            var indent = '\t'.repeat(level+1);
+            var indentedText = innerText.replace(/\n/ig, '\n' + indent)
+            html  +=  indent + indentedText + '\n';
         }
     }
     
@@ -96,7 +98,7 @@ function HTML2Tree(text) {
                 object["children"] = [];
                 for (var i = 0; i < nodeList.length; i++) {
                     if (nodeList[i].nodeType == 3) {
-                        textContent += nodeList[i].nodeValue;
+                        textContent += $.trim(nodeList[i].nodeValue);
                         //object["children"].push(nodeList[i].nodeValue);
                     } else {
                         var newObject = {};
