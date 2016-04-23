@@ -2,8 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>HTML Tree Builder</title>
 	<!-- build:css:dist style/style.css -->
+    <link rel="stylesheet" href="./assets/lib/normalize.css/normalize.css">
     <link rel="stylesheet" href="./assets/lib/jquery-ui/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="./assets/lib/jstree/jstree.css">
     <link rel="stylesheet" type="text/css" href="./assets/lib/gijgo/grid.css">
@@ -12,28 +13,34 @@
 
 </head>
 <body>
-    <div id="panel">
-        <button id="btn-export">Export HTML</button>
-        <button id="btn-import">Import HTML</button>
+    <div class="wrapper">
+        <div id="panel">
+            <button id="btn-export" type="button">Export HTML</button>
+            <button id="btn-import" type="button">Import HTML</button>
+        </div>
+
+        <div id="dialog-export" title="Export HTML">
+            <textarea id="export"></textarea>
+        </div>
+
+        <div id="dialog-import" title="Import HTML">
+            <textarea id="import"></textarea>
+        </div>
+
+        <div id="container">
+            <div class="col">
+                <div id="tree" class="block"></div>
+            </div>
+            <div class="col">
+                <div id="content" class="block">
+                    <textarea id="inner-html"></textarea>
+                    <button id="btn-add">Add</button>
+                    <table id="grid"></table>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div id="dialog-export" title="Export HTML">
-        <textarea id="export"></textarea>
-    </div>
-
-    <div id="dialog-import" title="Import HTML">
-        <textarea id="import"></textarea>
-    </div>
-
-    <div id="container">
-        <div id="tree"></div>
-        <div id="content">
-            <textarea id="inner-html"></textarea>
-            <button id="btn-add">Add</button>
-            <table id="grid"></table>
-        <div>
-    </div>
-	
     <!-- build:js:dist js/scripts.js -->
 	<script src="./assets/lib/jquery/jquery.js"></script>
 	<script src="./assets/lib/jquery-ui/jquery-ui.js"></script>
@@ -44,6 +51,6 @@
     <script src="./assets/app/js/startup.js"></script>
     <script src="./assets/app/js/main.js"></script>
 	<!-- /build -->
-    
+
 </body>
 </html>

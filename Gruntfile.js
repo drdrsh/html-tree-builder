@@ -91,6 +91,7 @@ module.exports = function(grunt) {
             dist: {
                 dest : 'dist/style/style.css',
                 src  : [
+                    'dev/assets/lib/normalize.css/normalize.css',
                     'dev/assets/lib/jquery-ui/jquery-ui.css',
                     'dev/assets/lib/jstree/jstree.css',
                     'dev/assets/lib/gijgo/grid.css',
@@ -159,6 +160,8 @@ module.exports = function(grunt) {
                     clean: false
                 },
                 files: {
+
+                    'dev/assets/lib/normalize.css/normalize.css' : './normalize.css/normalize.css',
 
                     'dev/assets/lib/jquery/jquery.js' : './jquery/dist/jquery.js',
 
