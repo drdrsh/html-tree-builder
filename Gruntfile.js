@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
-    require('jit-grunt')(grunt);
+    require('jit-grunt')(grunt, {
+        replace: 'grunt-text-replace'
+    });
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         replace: {
