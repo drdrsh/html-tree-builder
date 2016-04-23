@@ -52,10 +52,10 @@ module.exports = function(grunt) {
 			}
 		},
 
-        "bower-install-simple": {
+        'bower-install-simple': {
             options: {color: true},
-            "dist": {options: {production: true}},
-            "dev":  {options: {production: false}}
+            'dist': {options: {production: true}},
+            'dev':  {options: {production: false}}
         },
 
         cssmin: {
@@ -99,26 +99,24 @@ module.exports = function(grunt) {
             }
         },
 
-                    
         concat: {
-            "dist" : {
+            'dist' : {
                 options: {},
                 files : {
                     'dist/js/scripts.js': [
-                        "dev/assets/lib/jquery/jquery.js",
-                        "dev/assets/lib/jquery-ui/jquery-ui.js",
-                        "dev/assets/lib/jstree/jstree.js",
-                        "dev/assets/lib/gijgo/grid.js",
-                        "dev/assets/app/js/array.equals.js",
-                        "dev/assets/app/js/events.js",
-                        "dev/assets/app/js/startup.js",
-                        "dev/assets/app/js/main.js"
-    
+                        'dev/assets/lib/jquery/jquery.js',
+                        'dev/assets/lib/jquery-ui/jquery-ui.js',
+                        'dev/assets/lib/jstree/jstree.js',
+                        'dev/assets/lib/gijgo/grid.js',
+                        'dev/assets/app/js/array.equals.js',
+                        'dev/assets/app/js/events.js',
+                        'dev/assets/app/js/startup.js',
+                        'dev/assets/app/js/main.js'
                     ]
                 }
             },
-            "dev": {
-                "jquery-ui": {
+            'dev': {
+                'jquery-ui': {
                     options: {
                         separator: ';'
                     },
@@ -137,9 +135,8 @@ module.exports = function(grunt) {
             }
         },
 
-
         uglify: {
-            "dist" : {
+            'dist' : {
                 options: {
                     banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
                 },
@@ -163,26 +160,25 @@ module.exports = function(grunt) {
                 },
                 files: {
 
-                    "dev/assets/lib/jquery/jquery.js" : "./jquery/dist/jquery.js",
+                    'dev/assets/lib/jquery/jquery.js' : './jquery/dist/jquery.js',
 
-                    "dev/assets/lib/jstree/jstree.js"  : "./jstree/dist/jstree.js",
-                    "dev/assets/lib/jstree/jstree.css" : "./jstree/dist/themes/default/style.css",
+                    'dev/assets/lib/jstree/jstree.js'  : './jstree/dist/jstree.js',
+                    'dev/assets/lib/jstree/jstree.css' : './jstree/dist/themes/default/style.css',
 
-                    "dev/assets/lib/gijgo/grid.js"  : "./gijgo/dist/combined/js/grid.js",
-                    "dev/assets/lib/gijgo/grid.css" : "./gijgo/dist/combined/css/grid.css",
+                    'dev/assets/lib/gijgo/grid.js'  : './gijgo/dist/combined/js/grid.js',
+                    'dev/assets/lib/gijgo/grid.css' : './gijgo/dist/combined/css/grid.css',
 
-                    "dev/assets/lib/jquery-ui/jquery-ui.js" : "./jquery-ui/jquery-ui.js",
-                    "dev/assets/lib/jquery-ui/jquery-ui.css" : "./jquery-ui/themes/start/jquery-ui.css",
+                    'dev/assets/lib/jquery-ui/jquery-ui.js' : './jquery-ui/jquery-ui.js',
+                    'dev/assets/lib/jquery-ui/jquery-ui.css' : './jquery-ui/themes/start/jquery-ui.css',
 
-                    "dev/assets/lib/jquery-ui/images" : "./jquery-ui/themes/start/images",
-                    "dev/assets/lib/jstree/" : "./jstree/dist/themes/default"
-                    
+                    'dev/assets/lib/jquery-ui/images' : './jquery-ui/themes/start/images',
+                    'dev/assets/lib/jstree/' : './jstree/dist/themes/default'
 
                 }
             }
         },
 
-        "expand-in-place": {
+        'expand-in-place': {
             'dev': { //specify a target with any name
                 target: ['dev/*.html']
             }
@@ -201,8 +197,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-concat-css');
     grunt.loadNpmTasks('grunt-serve');
-    
-    // task setup 
+
+    // task setup
     grunt.registerTask('dev', ['bower-install-simple:dev', 'concat:dev', 'bowercopy:dev', 'expand-in-place:dev']);
     grunt.registerTask('dist', [
         'dev',
