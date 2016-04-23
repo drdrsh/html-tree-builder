@@ -91,8 +91,8 @@ function HTML2Tree(text) {
         
         var nodeList = element.childNodes;
         if (nodeList != null) {
+            var textContent = '';
             if (nodeList.length) {
-                var textContent = '';
                 object["children"] = [];
                 for (var i = 0; i < nodeList.length; i++) {
                     if (nodeList[i].nodeType == 3) {
@@ -104,10 +104,10 @@ function HTML2Tree(text) {
                         treeHTML(nodeList[i], newObject);
                     }
                 }
-                object.li_attr = {};
-                object.li_attr['data-inner-text'] = textContent;
-                object.li_attr['data-attributes'] = '';
             }
+            object.li_attr = {};
+            object.li_attr['data-inner-text'] = textContent;
+            object.li_attr['data-attributes'] = '';
         }
         
         if (element.attributes != null) {

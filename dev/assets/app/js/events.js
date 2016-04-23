@@ -4,6 +4,7 @@ function onImportDialogOk() {
     try {
         data = HTML2Tree($('#import').val())
     } catch(e) {
+        console.log(e);
         alert('Invalid HTML');
         return;
     }
